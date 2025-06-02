@@ -51,14 +51,6 @@
     color: #0466C8;
 }
 
-.negative{
-    color: red;
-}
-
-.positive{
-    color: greenyellow;
-}
-
 .button-plus{
     width: fit-content;
     display: block;

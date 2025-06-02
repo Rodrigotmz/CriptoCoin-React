@@ -1,5 +1,12 @@
+a{
+    display: block;
+}
 .main-container{
     padding: 1em 2em;
+}
+
+.main-list-container{
+    padding: 1em 1.5em;
 }
 
 .cripto-container{
@@ -11,4 +18,25 @@
 
 h1{
     font-size: xx-large;
+}
+
+.section-home{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 400px;
+    gap: 0.2em;
+}
+
+.button-go{
+    padding: 0.5em 3em;
+    width: fit-content;
+    color: #001233;
+    border-radius: 0.5em;
+    background-color: #ebebeb;
+}
+
+.button-go:visited {
+    color: #001233;
 }

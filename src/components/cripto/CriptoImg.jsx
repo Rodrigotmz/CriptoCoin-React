@@ -21,7 +21,7 @@ const CriptoImg = ({symbol, name}) =>{
             setIconSrc(null);
         }
         };
-
+    
     return(
         <>
             {

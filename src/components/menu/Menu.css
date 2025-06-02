@@ -1,9 +1,17 @@
+#root{
+    overflow: hidden;
+}
+
 .main-menu{
-    background-color: blue;
-    padding: 1em;
+    padding: 0.2em 1em;
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
-    gap: 1rem;
+    border-bottom: 1px solid #fff;
+    max-width: calc(100% - 2em);
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .main-menu ul li{
@@ -15,7 +23,6 @@
     display: inline-block;
     color: #fff;
     text-decoration: none;
-    background-color: red;
     width: fit-content;
     padding: 0.3em 1em;
     border-radius: 0.3em;

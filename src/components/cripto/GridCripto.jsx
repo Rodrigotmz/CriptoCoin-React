@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Cripto from './Cripto';
+import Loader from '../helps/loader';
 
 const reqAxios = {
     baseURL: import.meta.env.VITE_API_URL,
@@ -29,9 +30,9 @@ const GridCripto = () => {
         request();
     }, [])
 
-    if (!crypts) return <><span className='loader'>Cargando...</span></>
+    if (!crypts) return <Loader />
     return (
-        <section>
+        <section className='main-list-container'>
             <h1>Lista de criptomonedas</h1>
             <div className='cripto-container'>
                 {crypts.map(({ id, name, priceUsd, symbol, rank, volumeUsd24Hr, changePercent24Hr }) => (

@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './components/App.jsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import PageNotFound from './components/error/404.jsx';
+import PageNotFound from './components/helps/404.jsx';
 import GridCripto from './components/cripto/GridCripto';
 import CriptoInfo from './components/cripto/CriptoInfo'
 import Home from './components/Home'

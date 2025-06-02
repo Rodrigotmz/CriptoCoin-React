@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './CriptoInfo.css';
 import CriptoImg from "./CriptoImg";
+import Loader from "../helps/loader";
 
 const reqAxios = {
     baseURL: import.meta.env.VITE_API_URL,
@@ -26,7 +27,6 @@ const CriptoInfo = () => {
                 const request = await axios(reqAxios);
                 const data = await request.data.data;
                 setCriptoInf(data[0]);
-                console.log(data[0])
             }
             catch (ex) {
                 console.error(ex)
@@ -34,12 +34,15 @@ const CriptoInfo = () => {
         }
         criptoInfo();
     }, []);
+
     const formatMoney = (value, currency = 'USD') => {
         return new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: currency
         }).format(value);
     };
+    if (!criptoInf.name || !criptoInf.symbol) return null;
+    if (!criptoInf) return <Loader/>
     return (
         <>
             <div className="main-cripto-container">
@@ -55,12 +58,29 @@ const CriptoInfo = () => {
                             <h1>{criptoInf.name}</h1>
                         </div>
                         <div className="cr-hd-inf-content">
-                            <p><span>Symbol:</span> ({criptoInf.symbol})</p>
-                            <p><span>Price (USD):</span> {formatMoney(parseFloat(criptoInf.priceUsd).toFixed(3))}</p>
-                            <p><span>Market Cap (USD):</span> {formatMoney(parseFloat(criptoInf.marketCapUsd).toFixed(3))}</p>
-                            <p><span>Market Cap (USD):</span> {formatMoney(parseFloat(criptoInf.marketCapUsd).toFixed(3))}</p>
-                            <p><span>Market Cap (USD):</span> {formatMoney(parseFloat(criptoInf.marketCapUsd).toFixed(3))}</p>
-                            <p><span>Market Cap (USD):</span> {formatMoney(parseFloat(criptoInf.marketCapUsd).toFixed(3))}</p>
+                            <p>
+                                <span className="sp">Symbol:</span> ({criptoInf.symbol})
+                            </p>
+                            <p>
+                                <span className="sp">Price (USD):</span>
+                                {formatMoney(parseFloat(criptoInf.priceUsd).toFixed(3))}
+                            </p>
+                            <p>
+                                <span className="sp">Market Cap (USD):</span>
+                                {formatMoney(parseFloat(criptoInf.marketCapUsd).toFixed(3))}
+                            </p>
+                            <p>
+                                <span className="sp">Change Percent 24Hr: </span> 
+                                <span className={parseFloat(criptoInf.changePercent24Hr) > 0 ? 'positive' : 'negative' }>{parseFloat(criptoInf.changePercent24Hr).toFixed(3)} </span>
+                            </p>
+                            <p>
+                                <span className="sp">Supply: </span>
+                                {formatMoney(parseFloat(criptoInf.supply).toFixed(3))}
+                            </p>
+                            <p>
+                                <span className="sp">VWap 24Hr:</span>
+                                {formatMoney(parseFloat(criptoInf.vwap24Hr).toFixed(3))}
+                            </p>
                         </div>
 
                     </div>
