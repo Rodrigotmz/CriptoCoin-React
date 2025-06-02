@@ -1,0 +1,76 @@
+.main-cripto-container {
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: 20% repeat(2, 1fr);
+    grid-template-rows: 30% 1fr;
+    grid-template-areas:
+        "header header header"
+        "img content content";
+}
+
+.cripto-header-container {
+    grid-area: header;
+    padding: 1em 2rem;
+    display: flex;
+    gap: 3rem;
+}
+
+.img-container-cripto{
+    grid-area: img;
+    width: 50%;
+    justify-self: center;
+    align-self: center;
+}
+
+.history-container-cripto{
+    grid-area: content;
+}
+.cr-hd-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.cr-hd-inf-content {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-columns: max-content;
+    gap: 0.5rem;
+}
+
+.cr-hd-info h1 {
+    flex-grow: 0;
+    flex-basis: auto;
+}
+
+.cr-hd-info span {
+    color: #00a6fb;
+    font-weight: bolder;
+    line-height: 2em;
+}
+
+.rank-logo {
+    background: rgb(24, 198, 131);
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    position: relative;
+    text-align: center;
+    padding: 1rem;
+    width: auto;
+    display: inline-block;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 15px -3px;
+    height: fit-content;
+    flex-shrink: 0;
+}
+
+.rank-logo::before {
+    content: "";
+    width: calc(100% + 20px);
+    height: 10px;
+    background: inherit;
+    position: absolute;
+    left: -10px;
+    top: 0px;
+    border-radius: 8px;
+}

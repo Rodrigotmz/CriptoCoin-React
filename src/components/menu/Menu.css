@@ -1,0 +1,23 @@
+.main-menu{
+    background-color: blue;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.main-menu ul li{
+    list-style: none;
+    display: inline-block;
+}
+
+.main-menu a{
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    background-color: red;
+    width: fit-content;
+    padding: 0.3em 1em;
+    border-radius: 0.3em;
+    margin-left: 1em;
+}

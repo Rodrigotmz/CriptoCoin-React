@@ -1,0 +1,14 @@
+.main-container{
+    padding: 1em 2em;
+}
+
+.cripto-container{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 1em;
+}
+
+h1{
+    font-size: xx-large;
+}

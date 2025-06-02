@@ -1,0 +1,14 @@
+.cripto-placeholder {
+    grid-area: CriptoImg;
+    align-self: center;
+    justify-self: center;
+}
+
+.cripto-img {
+    width: 100%;
+    height: 50%;
+    object-fit: contain;
+    grid-area: CriptoImg;
+    align-self: center;
+    justify-self: center;
+}

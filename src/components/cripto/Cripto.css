@@ -1,0 +1,70 @@
+:root{
+    --color-font: #00b4d8;
+}
+
+.cripto-card {
+    border: 2px solid #33415c;
+    border-left: 1em solid #0353A4;
+    padding: 0.3em 0.5em;
+    border-radius: 0.3rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    grid-template-rows: 18% 1fr;
+    grid-template-areas:
+        "head head"
+        "CriptoImg Content";
+    transition: transform .5s ease;
+    gap: 0.5em;
+}
+
+.cripto-card:hover {
+    --color-blue: #023E7D;
+    transform: scale(1.02);
+    background-color: var(--color-blue);
+    border-color: var(--color-blue);
+    border-left: 1em solid var(--color-font);
+    box-shadow: 0 4px 8px 0 rgba(51, 65, 92, 0.2),
+        0 6px 20px 0 rgba(125, 133, 151, 0.19);
+}
+
+.cripto-card:hover span {
+    color: var(--color-font);
+}
+
+.title {
+    grid-area: head;
+    padding: 0.2em 0.3em;
+}
+
+.info {
+    grid-area: Content;
+    padding: 0.5em;
+}
+.info p:last-of-type{
+    margin-bottom: 0.3em;
+}
+.label {
+    grid-area: Content;
+    font-weight: bold;
+    color: #0466C8;
+}
+
+.negative{
+    color: red;
+}
+
+.positive{
+    color: greenyellow;
+}
+
+.button-plus{
+    width: fit-content;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff6700;
+    padding: 0.2em 1em;
+    border-radius: 0.3em;
+}
