@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import './CriptoInfo.css';
 import CriptoImg from "./CriptoImg";
 import Loader from "../helps/loader";
+import History from "./CriptoHistory";
 
 const reqAxios = {
     baseURL: import.meta.env.VITE_API_URL,
@@ -27,6 +28,7 @@ const CriptoInfo = () => {
                 const request = await axios(reqAxios);
                 const data = await request.data.data;
                 setCriptoInf(data[0]);
+                console.log(data[0])
             }
             catch (ex) {
                 console.error(ex)
@@ -42,7 +44,6 @@ const CriptoInfo = () => {
         }).format(value);
     };
     if (!criptoInf.name || !criptoInf.symbol) return null;
-    if (!criptoInf) return <Loader/>
     return (
         <>
             <div className="main-cripto-container">
@@ -89,7 +90,7 @@ const CriptoInfo = () => {
                     <CriptoImg name={criptoInf.name} symbol={criptoInf.symbol} />
                 </div>
                 <div className="history-container-cripto">
-
+                    <History id={criptoInf.id}/>
                 </div>
             </div>
         </>

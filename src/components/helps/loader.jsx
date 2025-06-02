@@ -2,8 +2,8 @@ import './Loader.css';
 
 const Loader = ()=>{
     return <div className="loader">
-        <div class="contenedor-loader">
-            <div class="rueda"></div>
+        <div className="contenedor-loader">
+            <div className="rueda"></div>
         </div>
     </div>
 }

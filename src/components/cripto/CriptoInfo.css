@@ -15,16 +15,43 @@
     gap: 3rem;
 }
 
-.img-container-cripto{
+.img-container-cripto {
     grid-area: img;
-    width: 50%;
+    max-width: 50%;
     justify-self: center;
     align-self: center;
 }
 
-.history-container-cripto{
+.history-container-cripto {
     grid-area: content;
+    align-self: center;
+    justify-self: center;
+    max-height: 400px;
+    overflow-y: auto;
+    width: 90%;
+    scrollbar-color: #0371a8 #e8f1f2;
 }
+
+.history-container-cripto::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+}
+
+.history-container-cripto::-webkit-scrollbar-track {
+    background: #e8f1f2;
+    border-radius: 10px;
+}
+
+.history-container-cripto::-webkit-scrollbar-thumb {
+    background-color: #1b98e0;
+    border-radius: 10px;
+    border: 2px solid #e8f1f2;
+}
+
+.history-container-cripto::-webkit-scrollbar-thumb:hover {
+    background-color: #e8f1f2;
+}
+
 .cr-hd-info {
     flex: 1;
     min-width: 0;

@@ -1,0 +1,26 @@
+.table-history{
+    background-color: #001233;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: .2em;
+    overflow: hidden;
+}
+
+.table-history thead {
+    border-top-left-radius: 1em;
+    background-color: #0371a8;
+}
+
+.table-history th {
+    margin: 1.5em;
+    padding: 1em;
+    color: white;
+}
+
+.table-history td {
+    padding: .4rem;
+}
+
+.table-history tbody>tr:nth-child(odd) {
+    background-color: #13293d;
+}
