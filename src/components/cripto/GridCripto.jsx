@@ -1,43 +1,20 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import Cripto from './Cripto';
 import Loader from '../helps/loader';
-
-const reqAxios = {
-    baseURL: import.meta.env.VITE_API_URL,
-    url: 'assets',
-    method: 'get',
-    params: {
-        apiKey: import.meta.env.VITE_API_KEY
-    },
-    headers: { 'Content-Type': 'application/json' },
-    responseType: 'json'
-}
+import usePetition from '../../hooks/usePetition';
 
 const GridCripto = () => {
-    const [crypts, setCrypts] = useState()
+    const cripto1 = usePetition();
 
-    useEffect(() => {
-        const request = async () => {
-            try {
-                const req = await axios(reqAxios);
-                setCrypts(req.data.data);
-            }
-            catch (ex) {
-                console.log(ex)
-            }
-        }
-        request();
-    }, [])
-
-    if (!crypts) return <Loader />
+    if (!cripto1) return <Loader />
     return (
         <section className='main-list-container'>
             <h1>Lista de criptomonedas</h1>
             <div className='cripto-container'>
-                {crypts.map(({ id, name, priceUsd, symbol, rank, volumeUsd24Hr, changePercent24Hr }) => (
-                    <Cripto key={id} id={id} name={name} priceUsd={priceUsd} symbol={symbol} rank={rank} volumeUsd24Hr={volumeUsd24Hr} changePercent24Hr={changePercent24Hr} />
-                ))}
+                {
+                    cripto1 && cripto1?.map((cripto) => (
+                        <Cripto key={cripto.id} cripto={ cripto } />
+                    ))
+                }
             </div>
         </section>
     );

@@ -1,33 +1,33 @@
-
 import './Cripto.css';
 import CriptoImg from './CriptoImg';
 import { Link } from 'react-router-dom';
+import { parseFloatNumber, validatePositive } from '../../utils/numbers';
 
-const Cripto = ({ id, name, priceUsd, symbol, rank, volumeUsd24Hr, changePercent24Hr }) => {
+const Cripto = ({ cripto }) => {
     return (
         <div className="cripto-card">
-            <h3 className='title'>{name}</h3>
-            <CriptoImg name={name} symbol={symbol} />
+            <h3 className='title'>{ cripto.name }</h3>
+            <CriptoImg name={cripto.name} symbol={cripto.symbol} />
             <div className="info">
                 <p>
                     <span className='label'>Rank: </span> 
-                    {rank}
+                    {cripto.rank}
                 </p>
                 <p> 
                     <span className="label">Precio: </span> 
-                    {Number(priceUsd).toFixed(2)} 
+                    {parseFloatNumber(cripto.priceUsd, 2)} 
                 </p>
                 <p>
                     <span className='label'>Volume Usd 24Hr: </span> 
-                    {Number(volumeUsd24Hr).toFixed(2)} 
+                    {parseFloatNumber(cripto.volumeUsd24Hr, 3)} 
                 </p>
                 <p>
                     <span className='label'>Variación 24hrs: </span>
-                    <span className={parseFloat(changePercent24Hr) > 0 ? 'positive' : 'negative' }>
-                        {parseFloat(changePercent24Hr).toFixed(3) }%
+                    <span className={validatePositive(cripto.changePercent24Hr) }>
+                        {parseFloatNumber(cripto.changePercent24Hr, 2) }%
                     </span>
                 </p>
-                <Link to={`/criptos/${id}`} className='button-plus'>Ver mas..</Link>
+                <Link to={`/criptos/${cripto.id}`} className='button-plus'>Ver mas..</Link>
             </div>
         </div>
     );
