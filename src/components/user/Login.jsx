@@ -15,7 +15,6 @@ const Login = () => {
 
     const submit = (e) => {
         e.preventDefault();
-        console.log(user)
         setCargando(true)
         setError(null);
         const request = postAxios(user);

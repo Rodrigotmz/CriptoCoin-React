@@ -13,7 +13,6 @@ const req_axios = (ids) => {
         headers: { 'Content-Type': 'application/json' },
         responseType: 'json'
     }
-    console.log(request)
     return request;
 }
 
@@ -30,7 +29,6 @@ const postAxios = (user) => {
         },
         responseType: 'json'
     }
-    console.log(request)
     return request
 }
 

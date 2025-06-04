@@ -24,7 +24,6 @@ const History = ({id}) =>{
             try {
                 const request = await axios(reqAxios);
                 const data = await request.data.data;
-                console.log(data);
                 setHistory(data);
             }
             catch (ex) {
