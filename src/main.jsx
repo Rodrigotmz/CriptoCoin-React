@@ -8,6 +8,7 @@ import CriptoInfo from './components/cripto/CriptoInfo'
 import Home from './components/Home'
 import { UserContextProvider } from './components/context/UserContext.jsx';
 import Perfil from './components/user/Perfil.jsx';
+import Login from './components/user/Login';
 
 createRoot(document.getElementById('root')).render(
     <UserContextProvider>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')).render(
                     <Route index element={<GridCripto />} />
                     <Route path=':id' element={<CriptoInfo />} />
                 </Route>
+                <Route path='/Login' element={ <Login/> }/>
                 <Route path='*' element={<PageNotFound />} />
             </Routes>
         </BrowserRouter>

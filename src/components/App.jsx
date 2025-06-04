@@ -3,9 +3,11 @@ import './App.css'
 import Menu from './menu/Menu';
 import Loader from './helps/loader';
 import { useEffect, useState } from 'react';
+import { useNavigate, Navigate } from "react-router-dom";
 
 const App = () => {
 
+  if (!localStorage.getItem("tokenReq")) return <Navigate to='/login' />
   const [cargando, setCargando] = useState(true);
   useEffect(() => {
     const timeLoader = setTimeout(() => {

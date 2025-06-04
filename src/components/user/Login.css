@@ -1,0 +1,67 @@
+:root{
+    --bg-color: #001845;
+    --color-tx: #ebebeb;
+    --bg-button: #ff6700;
+}
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-tx);
+    margin-top: 1em;
+}
+.login-container :is(label, input) {
+    display: block;
+    margin-top: 0.5em;
+    font-weight: bold;
+}
+
+.login-container input{
+    padding: 0.3em;
+    border-radius: 5px;
+    border: 1px solid var(--bg-color);
+    width: 200px;
+    background-color: var(--color-tx);
+    color: #004e98;
+}
+
+.card-login{
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    border: 1px solid var(--color-tx);
+    align-items: center;
+    justify-content: center;
+    padding: 5em;
+    border-radius: 0.5em;
+    background-color: var(--bg-color);
+}
+
+.field{
+    margin-bottom: 1em;
+}
+
+.submit input{
+    color: #fff;
+    padding: 0.5em 1em;
+    width: fit-content;
+    border-radius: 5px;
+    outline: none;
+    border: 0;
+    background-color: var(--bg-button);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error{
+    margin-top: 0.5em;
+    padding: 0.5em;
+    width: fit-content;
+    border: 1px solid red;
+    background-color: rgba(212, 39, 8, 0.623);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+}

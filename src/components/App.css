@@ -1,5 +1,6 @@
 a{
     display: block;
+    cursor: pointer;
 }
 .main-container{
     padding: 1em 2em;
