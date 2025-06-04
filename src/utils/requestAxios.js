@@ -7,8 +7,7 @@ const req_axios = (ids) => {
     }
 
     const request = {
-        baseURL: import.meta.env.VITE_API_URL,
-        url: 'assets',
+        url: `${import.meta.env.VITE_API_URL}assets`,
         method: 'get',
         params,
         headers: { 'Content-Type': 'application/json' },
